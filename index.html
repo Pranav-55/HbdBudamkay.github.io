@@ -273,27 +273,9 @@
                 <span class="cursor"></span>
             </div>
         </div>
-        <button class="next-button" onclick="goToNextPage()">Avsrama Next Emundho chudaniki??</button>
+        <button class="next-button" onclick="window.location.href = 'indexes.html'">Avsrama Next Emundho chudaniki??</button>
     </div>
 
-
-
-
-<script>
-function goToNextPage() {
-            // Add a bounce effect before navigating
-            gsap.to('.next-button', {
-                scale: 1.2,
-                yoyo: true,
-                repeat: 1,
-                duration: 0.3,
-                onComplete: () => {
-                    // Change this URL to your next page
-                    window.location.href = "indexes.html";
-                    
-                }
-            });
-</script>
 
 </body>
 </html>
