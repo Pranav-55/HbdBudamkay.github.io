@@ -133,6 +133,21 @@
             width: 15px;
             height: 15px;
         }
+        .navigation-buttons {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 3rem;
+        }
+        .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: left;
+            
+            }
+        
+        #backButton {
+            background: linear-gradient(45deg, #a485ff, #75c6ff);
+        }
 
         @keyframes float {
             0% {
@@ -275,6 +290,11 @@
         </div>
         <button class="next-button" onclick="goToNextPage()">Let's Go! ✨</button>
     </div>
+    <div class="navigation-buttons">
+            <button id="backButton" class="btn">
+                <span>← Back to Main</span>
+            </button>
+    </div>
 
     <div class="audio-controls">
         <button id="play-pause"><i class="play-icon">⏸️</i></button>
@@ -330,6 +350,10 @@
             audio.volume = volumeControl.value;
         });
 
+         // Event listeners for navigation buttons
+            backButton.addEventListener('click', function() {
+                window.location.href = 'index.html'; // Adjust this to your welcome page URL
+            });
         // Function to go to next page
         function goToNextPage() {
             // Add a bounce effect before navigating
@@ -432,6 +456,13 @@
             yoyo: true,
             duration: 2
         });
+         gsap.from('.navigation-buttons', {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                delay: 0.5,
+                ease: 'power3.out'
+            });
         
         // Responsive adjustments
         function handleResize() {
