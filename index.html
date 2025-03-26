@@ -75,64 +75,7 @@
             background: linear-gradient(45deg, #8A2BE2, #FF1493);
         }
 
-        .audio-controls {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 10px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .audio-controls button {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #FF1493;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .audio-controls button:hover {
-            transform: scale(1.2);
-            color: #8A2BE2;
-        }
-
-        .audio-controls input {
-            width: 100px;
-        }
-
-        .confetti, .balloon, .heart, .star {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            z-index: 1;
-            opacity: 0.8;
-            pointer-events: none;
-        }
-
-        .balloon {
-            width: 40px;
-            height: 50px;
-        }
-
-        .heart {
-            width: 25px;
-            height: 25px;
-        }
-
-        .star {
-            width: 15px;
-            height: 15px;
-        }
-
+        
         @keyframes float {
             0% {
                 transform: translateY(0) rotate(0deg);
@@ -269,13 +212,31 @@
         <h1>Manchidhii, Naa istam nen cheppann.... Kavalante Next Click chesko😏</h1>
         <div class="typewriter-container">
             <div class="subtitle typewriter-text">
-          
+                Hey Bestie! Ready for your special surprise? Click to continue!
                 <span class="cursor"></span>
             </div>
         </div>
-        <button class="next-button" onclick="window.location.href = 'indexes.html'">Avsrama Next Emundho chudaniki??</button>
+        <button class="next-button" onclick="goToNextPage()">Next</button>
     </div>
+    <script>
+ function goToNextPage() {
+            // Add a bounce effect before navigating
+            gsap.to('.next-button', {
+                scale: 1.2,
+                yoyo: true,
+                repeat: 1,
+                duration: 0.3,
+                onComplete: () => {
+                    // Change this URL to your next page
+                    window.location.href = "memorylane.html";
+                    
+                    // For demonstration, we'll just show an alert
+                    
+                }
+            });
+        }
 
+        </script>
 
 </body>
 </html>
