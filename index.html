@@ -217,7 +217,9 @@
             </div>
         </div>
         <button class="next-button" onclick="goToNextPage()">Next</button>
-    </div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script>
  function goToNextPage() {
             // Add a bounce effect before navigating
@@ -235,6 +237,14 @@
                 }
             });
         }
+
+        // Responsive adjustments
+        function handleResize() {
+            // Add responsive adjustments if needed
+        }
+        
+        window.addEventListener('resize', handleResize);
+        handleResize();
 
         </script>
 
