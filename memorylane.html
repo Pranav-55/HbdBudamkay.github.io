@@ -329,6 +329,18 @@
             left: 50%;
         }
 
+
+        .music-controls:hover {
+            transform: scale(1.1);
+        }
+
+        .music-controls i {
+            color: #6a4c93;
+            font-size: 24px;
+        }
+
+
+
         @keyframes floatUp {
             0% {
                 transform: translateY(100vh) rotate(0deg);
@@ -535,10 +547,22 @@
                 <span>✨ Next Surprise! ✨</span>
             </button>
         </div>
-        <audio id="birthday-song" autoplay loop>
-        <source src="hbdmusicc.mp3" type="audio/mp3">
-    </audio>
+       
     </div>
+
+    <!-- Music Controls -->
+    <div class="music-controls" id="music-toggle">
+        <i class="fas fa-volume-up" id="music-icon"></i>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="click-sound" preload="auto">
+        <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_bb630cc098.mp3?filename=cute-notification-ringtone-1-173850.mp3" type="audio/mp3">
+    </audio>
+    <audio id="background-music" autoplay loop>
+        <source src="meiyazhagan_bgm.mp3" type="audio/mp3">
+    </audio>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
@@ -546,6 +570,25 @@
     <script>
 
 
+        
+ // Music controls
+            const musicToggle = document.getElementById('music-toggle');
+            const musicIcon = document.getElementById('music-icon');
+            const backgroundMusic = document.getElementById('background-music');
+            let isMusicPlaying = false;
+
+            musicToggle.addEventListener('click', function() {
+                if (isMusicPlaying) {
+                    backgroundMusic.pause();
+                    musicIcon.classList.remove('fa-volume-up');
+                    musicIcon.classList.add('fa-volume-mute');
+                } else {
+                    backgroundMusic.play().catch(e => console.log('Audio play error:', e));
+                    musicIcon.classList.remove('fa-volume-mute');
+                    musicIcon.classList.add('fa-volume-up');
+                }
+                isMusicPlaying = !isMusicPlaying;
+            });
 
         
 
