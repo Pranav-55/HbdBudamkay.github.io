@@ -523,7 +523,41 @@
         <button class="btn" onclick="goNext()">Next Surprise ▶</button>
     </div>
 
+    <!-- Audio Elements -->
+    <audio id="click-sound" preload="auto">
+        <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_bb630cc098.mp3?filename=cute-notification-ringtone-1-173850.mp3" type="audio/mp3">
+    </audio>
+    <audio id="background-music" autoplay loop>
+        <source src="music2c.mp3" type="audio/mp3">
+    </audio>
+
     <script>
+
+
+
+         // Music controls
+            const musicToggle = document.getElementById('music-toggle');
+            const musicIcon = document.getElementById('music-icon');
+            const backgroundMusic = document.getElementById('background-music');
+            let isMusicPlaying = false;
+
+            musicToggle.addEventListener('click', function() {
+                if (isMusicPlaying) {
+                    backgroundMusic.pause();
+                    musicIcon.classList.remove('fa-volume-up');
+                    musicIcon.classList.add('fa-volume-mute');
+                } else {
+                    backgroundMusic.play().catch(e => console.log('Audio play error:', e));
+                    musicIcon.classList.remove('fa-volume-mute');
+                    musicIcon.classList.add('fa-volume-up');
+                }
+                isMusicPlaying = !isMusicPlaying;
+            });
+
+
+        
+
+        
         // Global variables
         let candlesBlown = 0;
         const totalCandles = 5;
