@@ -532,32 +532,6 @@
     </audio>
 
     <script>
-
-
-
-         // Music controls
-            const musicToggle = document.getElementById('music-toggle');
-            const musicIcon = document.getElementById('music-icon');
-            const backgroundMusic = document.getElementById('background-music');
-            let isMusicPlaying = false;
-
-            musicToggle.addEventListener('click', function() {
-                if (isMusicPlaying) {
-                    backgroundMusic.pause();
-                    musicIcon.classList.remove('fa-volume-up');
-                    musicIcon.classList.add('fa-volume-mute');
-                } else {
-                    backgroundMusic.play().catch(e => console.log('Audio play error:', e));
-                    musicIcon.classList.remove('fa-volume-mute');
-                    musicIcon.classList.add('fa-volume-up');
-                }
-                isMusicPlaying = !isMusicPlaying;
-            });
-
-
-        
-
-        
         // Global variables
         let candlesBlown = 0;
         const totalCandles = 5;
@@ -760,6 +734,30 @@
            
              window.location.href = 'letter.html';
         }
+
+
+        
+         // Music controls
+            const musicToggle = document.getElementById('music-toggle');
+            const musicIcon = document.getElementById('music-icon');
+            const backgroundMusic = document.getElementById('background-music');
+            let isMusicPlaying = false;
+
+            musicToggle.addEventListener('click', function() {
+                if (isMusicPlaying) {
+                    backgroundMusic.pause();
+                    musicIcon.classList.remove('fa-volume-up');
+                    musicIcon.classList.add('fa-volume-mute');
+                } else {
+                    backgroundMusic.play().catch(e => console.log('Audio play error:', e));
+                    musicIcon.classList.remove('fa-volume-mute');
+                    musicIcon.classList.add('fa-volume-up');
+                }
+                isMusicPlaying = !isMusicPlaying;
+            });
+
+
+        
     </script>
 </body>
 </html>
